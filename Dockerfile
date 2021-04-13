@@ -6,6 +6,6 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
-ARG URL=0.0.0.0:4000
+ARG URL=0.0.0.0:8300
 
 CMD ["sh", "-c", "python manage.py makemigrations vanta && python manage.py migrate && python manage.py runserver $URL"]
