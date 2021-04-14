@@ -83,7 +83,9 @@ class RequestDetail(mixins.RetrieveModelMixin,
         return self.update(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
+            a = self.retrieve(request, *args, **kwargs)
+            self.destroy(request, *args, **kwargs)
+            return a
 
 
 class RequestDetailbyUser(mixins.RetrieveModelMixin,
@@ -101,4 +103,6 @@ class RequestDetailbyUser(mixins.RetrieveModelMixin,
         return self.update(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
+        a = self.retrieve(request, *args, **kwargs)
+        self.destroy(request, *args, **kwargs)
+        return a
