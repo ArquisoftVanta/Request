@@ -1,0 +1,289 @@
+swagger: "2.0"
+info:
+  description: "This is a sample microservice within the VANTA app."
+  version: "0.0.1"
+  title: "Vanta Postulacion"
+basePath: "/request"
+tags:
+- name: "coordinate"
+  description: "Coordinates required to create the service, this information is provided between the user interaction and the google maps API."
+- name: "request"
+  description: "A request is created to be selected later by a service."
+- name: "requestActive"
+  description: "Filter requests by request active or desactive"
+- name: "requestbyUser"
+  description: "Filter requests by user"
+- name: "requestService"
+  description: "Fiter requests by service"
+  
+
+paths:
+  /coordinate:
+    post:
+      tags:
+      - "coordinate"
+      summary: "Creates a coordinate with name of the address to be added in a postulation."
+      description: ""
+      operationId: "addCoordinate"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "A coordinate is added in database."
+        required: true
+        schema:
+          $ref: "#/definitions/Coordinates"
+      responses:
+        "201":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Coordinates"
+    get:
+      tags:
+      - "coordinate"
+      summary: "Returns the entire list of coordinates"
+      description: ""
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid status value"
+  /coordinates/{coordinate_id}:   
+    put:
+      tags:
+      - "coordinate"
+      summary: "Modify a coordinate in database"
+      description: ""
+      operationId: "modifyCoordinate"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "coordinate_id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Coordinate not found"
+        "405":
+          description: "Validation exception"
+    delete:
+      tags:
+      - "coordinate"
+      summary: "Delete a coordinate in database"
+      description: ""
+      operationId: "deleteCoordinate"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "coordinate_id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Coordinate not found"
+        "405":
+          description: "Validation exception"
+  /request:
+    post:
+      tags:
+      - "request"
+      summary: "Creates a request."
+      description: ""
+      operationId: "addRequest"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "A request is added in database."
+        required: true
+        schema:
+          $ref: "#/definitions/Request"
+      responses:
+        "201":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Coordinates"
+    get:
+      tags:
+      - "request"
+      summary: "Returns the entire list of request"
+      description: ""
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid status value"
+  /request/{request_id}:   
+    put:
+      tags:
+      - "request"
+      summary: "Modify a request in database"
+      description: ""
+      operationId: "modifyRequest"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "request_id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Coordinate not found"
+        "405":
+          description: "Validation exception"
+    delete:
+      tags:
+      - "request"
+      summary: "Delete a request in database"
+      description: ""
+      operationId: "deleteRequest"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "request_id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Request not found"
+        "405":
+          description: "Validation exception"
+  /requestActive/?active={active}:
+    get:
+      tags:
+      - "requestActive"
+      summary: "Returns the entire list of request actives"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "active"
+        in: "path"
+        required: true
+        type: "boolean"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Request"
+        "400":
+          description: "Invalid status value"
+  /requestbyUser/?user={user_id}:
+    get:
+      tags:
+      - "requestbyUser"
+      summary: "Returns the entire list of request by user"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Request"
+        "400":
+          description: "Invalid status value"
+  /requestService/?service={id_service}:
+    get:
+      tags:
+      - "requestService"
+      summary: "Returns the entire list of request by service"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id_service"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Request"
+        "400":
+          description: "Invalid status value"
+  
+
+definitions:
+  Coordinates:
+    type: "object"
+    properties:
+      coordinates_id:
+        type: "integer"
+      request:
+        type: "integer"
+      lat:
+        type: "string"
+      lng:
+        type: "string"
+      address:
+        type: "string"
+      type:
+        type: "integer"
+    xml:
+      name: "Coordinate"
+  Request:
+    type: "object"
+    properties:
+      request_id:
+        type: "integer"
+      user_id:
+        type: "string"
+      service_id:
+        type: "integer"
+      date:
+        type: "string"
+      time:
+        type: "string"
+      active:
+        type: "boolean"
+    xml:
+      name: "Request"
