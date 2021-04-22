@@ -1,5 +1,4 @@
 from .coordinates_request_serializer import CoordinatesRequestSerializer
 from .coordinates_service_serializer import CoordinatesServiceSerializer
 from .request_serializer import RequestSerializer
-from .user_serializer import UserSerializer
 from .service_serializer import ServiceSerializer

@@ -8,7 +8,8 @@ class Coordinates_Request(models.Model):
     lat = models.CharField(max_length=50)
     lng = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
-    type = models.IntegerField()
+    type = models.CharField(max_length=30)
+    order = models.IntegerField(blank=True, null=True)
 
     class Meta:
         app_label = 'vanta'
