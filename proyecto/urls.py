@@ -8,6 +8,7 @@ from proyecto.views.request_view import RequestActive
 from proyecto.views.request_view import RequestService
 from proyecto.views.coordenates_request_view import CoordinatesDetail
 from proyecto.views.coordenates_request_view import CoordinatesList
+from proyecto.views.coordenates_request_view import CoordinatesbyRequest
 from proyecto.views.service_view import ServiceDetail
 from proyecto.views.service_view import ServiceList
 router = DefaultRouter()
@@ -18,8 +19,8 @@ urlpatterns = [
     path('requestUser/', RequestU.as_view()),
     path('requestActive/', RequestActive.as_view()),
     path('requestService/', RequestService.as_view()),
-
     path('request/<int:pk>', RequestDetail.as_view()),
+    path('coordinatesRequest/', CoordinatesbyRequest.as_view()),
     path('coordinates/', CoordinatesList.as_view()),
     path('coordinates/<int:pk>', CoordinatesDetail.as_view()),
     path('service/', ServiceList.as_view()),

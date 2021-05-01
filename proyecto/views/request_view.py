@@ -22,7 +22,6 @@ class RequestU(mixins.ListModelMixin,
                   mixins.RetrieveModelMixin,
                   mixins.CreateModelMixin,
                   generics.GenericAPIView):
-    ##lookup_field = 'user_id'
 
     def get_queryset(self):
         id = self.request.GET.get('user')
@@ -87,22 +86,3 @@ class RequestDetail(mixins.RetrieveModelMixin,
             self.destroy(request, *args, **kwargs)
             return a
 
-
-class RequestDetailbyUser(mixins.RetrieveModelMixin,
-                     mixins.UpdateModelMixin,
-                     mixins.DestroyModelMixin,
-                     generics.GenericAPIView):
-
-    queryset = Request.objects.filter(user_id=1)
-    serializer_class = RequestSerializer
-
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
-
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-    def delete(self, request, *args, **kwargs):
-        a = self.retrieve(request, *args, **kwargs)
-        self.destroy(request, *args, **kwargs)
-        return a

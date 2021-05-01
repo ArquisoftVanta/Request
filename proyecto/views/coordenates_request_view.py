@@ -36,3 +36,21 @@ class CoordinatesDetail(mixins.RetrieveModelMixin,
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
+
+
+class CoordinatesbyRequest(mixins.ListModelMixin,
+                  mixins.RetrieveModelMixin,
+                  mixins.CreateModelMixin,
+                  generics.GenericAPIView):
+
+    def get_queryset(self):
+        request = self.request.GET.get('request')
+        return Coordinates_Request.objects.filter(request = request)
+
+    serializer_class = CoordinatesRequestSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
