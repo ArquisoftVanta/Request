@@ -5,9 +5,9 @@ class Coordinates_Request(models.Model):
 
     coordinates_id = models.AutoField(primary_key = True)
     request = models.ForeignKey(Request, on_delete=models.CASCADE)
-    lat = models.CharField(max_length=50)
-    lng = models.CharField(max_length=50)
-    address = models.CharField(max_length=50)
+    lat = models.CharField(max_length=80)
+    lng = models.CharField(max_length=80)
+    address = models.CharField(max_length=100)
     type = models.CharField(max_length=30)
     order = models.IntegerField(blank=True, null=True)
 

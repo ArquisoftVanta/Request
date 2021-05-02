@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f245c0-cac6-4e1a-be87-1762363c7c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/views/coordenates_request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/views/coordenates_request_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/views/request_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/views/request_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vanta/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/vanta/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
