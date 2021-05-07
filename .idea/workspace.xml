@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f245c0-cac6-4e1a-be87-1762363c7c0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto/models/coordinates_service_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/models/coordinates_service_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto/models/service_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/models/service_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto/serializers/coordinates_service_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/serializers/coordinates_service_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto/serializers/service_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/serializers/service_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
