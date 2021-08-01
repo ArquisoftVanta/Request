@@ -4,6 +4,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from proyecto.views.request_view import RequestList
 from proyecto.views.request_view import RequestDetail
 from proyecto.views.request_view import RequestU
+from proyecto.views.request_view import RequestNumberListUser
 from proyecto.views.request_view import RequestActive
 from proyecto.views.request_view import RequestService
 from proyecto.views.coordenates_request_view import CoordinatesDetail
@@ -17,6 +18,7 @@ urlpatterns = [
 
     path('request/', RequestList.as_view()),
     path('requestUser/', RequestU.as_view()),
+    path('requestListUser/', RequestNumberListUser.as_view()),
     path('requestActive/', RequestActive.as_view()),
     path('requestService/', RequestService.as_view()),
     path('request/<int:pk>', RequestDetail.as_view()),

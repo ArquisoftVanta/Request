@@ -34,6 +34,22 @@ class RequestU(mixins.ListModelMixin,
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
 
+class RequestNumberListUser(APIView):
+    http_method_names = ['get', 'head']
+
+    def get_queryset(self):
+        id = self.request.GET.get('user')
+        countRequest = Request.objects.filter(user_id = id).count() ##[]
+        ##countRequest.append(Request.objects.filter(user_id = id).count())
+        print(countRequest)
+        return countRequest
+
+    def get(self, request, format=None):
+        query = self.get_queryset()
+        serializer_class = int(query)
+        return Response(serializer_class)
+
+
 class RequestActive(mixins.ListModelMixin,
                   mixins.RetrieveModelMixin,
                   mixins.CreateModelMixin,
