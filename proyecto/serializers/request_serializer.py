@@ -5,4 +5,4 @@ class RequestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Request
-        fields = ['request_id','user_name','user_id','service_id','date','time','active','registry_request']
+        fields = ['request_id','user_id','service_id','date','time','active','registry_request']
